@@ -1,0 +1,22 @@
+class Solution:
+    def maxArea(self, heights: List[int]) -> int:
+        l, r = 0, len(heights) - 1
+        maxArea = 0
+
+        #limitng factor is shortest val of each pointer
+
+        #loop from opposite ends
+
+        while l < r:
+            currArea = min(heights[l], heights[r]) * (r - l)
+            maxArea = max(maxArea, currArea)
+            if heights[l] < heights[r]:
+                l += 1
+            else: 
+                r -= 1
+        
+        return maxArea
+            
+
+
+        
